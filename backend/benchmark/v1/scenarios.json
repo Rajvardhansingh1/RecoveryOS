@@ -1,0 +1,840 @@
+{
+  "dataset_version": "v1",
+  "seed": 20261020,
+  "max_attempts": 3,
+  "scenarios": [
+    {
+      "id": "acme-api:crash_after_step@inspect_repo",
+      "repo": "demo/acme-api",
+      "faults": [
+        {
+          "step": "inspect_repo",
+          "kind": "crash_after_step",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "heldout"
+    },
+    {
+      "id": "acme-api:crash_before_persist@inspect_repo",
+      "repo": "demo/acme-api",
+      "faults": [
+        {
+          "step": "inspect_repo",
+          "kind": "crash_before_persist",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "acme-api:crash_after_step@run_checks",
+      "repo": "demo/acme-api",
+      "faults": [
+        {
+          "step": "run_checks",
+          "kind": "crash_after_step",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "acme-api:crash_before_persist@run_checks",
+      "repo": "demo/acme-api",
+      "faults": [
+        {
+          "step": "run_checks",
+          "kind": "crash_before_persist",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "acme-api:crash_after_step@prepare_changelog",
+      "repo": "demo/acme-api",
+      "faults": [
+        {
+          "step": "prepare_changelog",
+          "kind": "crash_after_step",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "acme-api:crash_before_persist@prepare_changelog",
+      "repo": "demo/acme-api",
+      "faults": [
+        {
+          "step": "prepare_changelog",
+          "kind": "crash_before_persist",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "acme-api:crash_after_step@validate_version",
+      "repo": "demo/acme-api",
+      "faults": [
+        {
+          "step": "validate_version",
+          "kind": "crash_after_step",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "heldout"
+    },
+    {
+      "id": "acme-api:crash_before_persist@validate_version",
+      "repo": "demo/acme-api",
+      "faults": [
+        {
+          "step": "validate_version",
+          "kind": "crash_before_persist",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "heldout"
+    },
+    {
+      "id": "acme-api:crash_after_step@create_release_plan",
+      "repo": "demo/acme-api",
+      "faults": [
+        {
+          "step": "create_release_plan",
+          "kind": "crash_after_step",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "heldout"
+    },
+    {
+      "id": "acme-api:crash_before_persist@create_release_plan",
+      "repo": "demo/acme-api",
+      "faults": [
+        {
+          "step": "create_release_plan",
+          "kind": "crash_before_persist",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "heldout"
+    },
+    {
+      "id": "acme-api:crash_after_step@publish_release",
+      "repo": "demo/acme-api",
+      "faults": [
+        {
+          "step": "publish_release",
+          "kind": "crash_after_step",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "acme-api:crash_before_persist@publish_release",
+      "repo": "demo/acme-api",
+      "faults": [
+        {
+          "step": "publish_release",
+          "kind": "crash_before_persist",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "acme-api:timeoutx1@inspect_repo",
+      "repo": "demo/acme-api",
+      "faults": [
+        {
+          "step": "inspect_repo",
+          "kind": "timeout",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "acme-api:rate_limitx2@inspect_repo",
+      "repo": "demo/acme-api",
+      "faults": [
+        {
+          "step": "inspect_repo",
+          "kind": "rate_limit",
+          "count": 2
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "acme-api:invalid_outputx1@inspect_repo",
+      "repo": "demo/acme-api",
+      "faults": [
+        {
+          "step": "inspect_repo",
+          "kind": "invalid_output",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "acme-api:timeoutx1@run_checks",
+      "repo": "demo/acme-api",
+      "faults": [
+        {
+          "step": "run_checks",
+          "kind": "timeout",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "acme-api:rate_limitx2@run_checks",
+      "repo": "demo/acme-api",
+      "faults": [
+        {
+          "step": "run_checks",
+          "kind": "rate_limit",
+          "count": 2
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "acme-api:invalid_outputx1@run_checks",
+      "repo": "demo/acme-api",
+      "faults": [
+        {
+          "step": "run_checks",
+          "kind": "invalid_output",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "heldout"
+    },
+    {
+      "id": "acme-api:timeoutx1@create_release_plan",
+      "repo": "demo/acme-api",
+      "faults": [
+        {
+          "step": "create_release_plan",
+          "kind": "timeout",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "acme-api:rate_limitx2@create_release_plan",
+      "repo": "demo/acme-api",
+      "faults": [
+        {
+          "step": "create_release_plan",
+          "kind": "rate_limit",
+          "count": 2
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "acme-api:invalid_outputx1@create_release_plan",
+      "repo": "demo/acme-api",
+      "faults": [
+        {
+          "step": "create_release_plan",
+          "kind": "invalid_output",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "acme-api:timeoutx1@publish_release",
+      "repo": "demo/acme-api",
+      "faults": [
+        {
+          "step": "publish_release",
+          "kind": "timeout",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "acme-api:rate_limitx2@publish_release",
+      "repo": "demo/acme-api",
+      "faults": [
+        {
+          "step": "publish_release",
+          "kind": "rate_limit",
+          "count": 2
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "acme-api:invalid_outputx1@publish_release",
+      "repo": "demo/acme-api",
+      "faults": [
+        {
+          "step": "publish_release",
+          "kind": "invalid_output",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "heldout"
+    },
+    {
+      "id": "breaking-change:crash_after_step@inspect_repo",
+      "repo": "demo/breaking-change",
+      "faults": [
+        {
+          "step": "inspect_repo",
+          "kind": "crash_after_step",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "breaking-change:crash_before_persist@inspect_repo",
+      "repo": "demo/breaking-change",
+      "faults": [
+        {
+          "step": "inspect_repo",
+          "kind": "crash_before_persist",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "breaking-change:crash_after_step@run_checks",
+      "repo": "demo/breaking-change",
+      "faults": [
+        {
+          "step": "run_checks",
+          "kind": "crash_after_step",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "breaking-change:crash_before_persist@run_checks",
+      "repo": "demo/breaking-change",
+      "faults": [
+        {
+          "step": "run_checks",
+          "kind": "crash_before_persist",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "heldout"
+    },
+    {
+      "id": "breaking-change:crash_after_step@prepare_changelog",
+      "repo": "demo/breaking-change",
+      "faults": [
+        {
+          "step": "prepare_changelog",
+          "kind": "crash_after_step",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "breaking-change:crash_before_persist@prepare_changelog",
+      "repo": "demo/breaking-change",
+      "faults": [
+        {
+          "step": "prepare_changelog",
+          "kind": "crash_before_persist",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "heldout"
+    },
+    {
+      "id": "breaking-change:crash_after_step@validate_version",
+      "repo": "demo/breaking-change",
+      "faults": [
+        {
+          "step": "validate_version",
+          "kind": "crash_after_step",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "breaking-change:crash_before_persist@validate_version",
+      "repo": "demo/breaking-change",
+      "faults": [
+        {
+          "step": "validate_version",
+          "kind": "crash_before_persist",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "heldout"
+    },
+    {
+      "id": "breaking-change:crash_after_step@create_release_plan",
+      "repo": "demo/breaking-change",
+      "faults": [
+        {
+          "step": "create_release_plan",
+          "kind": "crash_after_step",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "breaking-change:crash_before_persist@create_release_plan",
+      "repo": "demo/breaking-change",
+      "faults": [
+        {
+          "step": "create_release_plan",
+          "kind": "crash_before_persist",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "heldout"
+    },
+    {
+      "id": "breaking-change:crash_after_step@publish_release",
+      "repo": "demo/breaking-change",
+      "faults": [
+        {
+          "step": "publish_release",
+          "kind": "crash_after_step",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "breaking-change:crash_before_persist@publish_release",
+      "repo": "demo/breaking-change",
+      "faults": [
+        {
+          "step": "publish_release",
+          "kind": "crash_before_persist",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "breaking-change:timeoutx1@inspect_repo",
+      "repo": "demo/breaking-change",
+      "faults": [
+        {
+          "step": "inspect_repo",
+          "kind": "timeout",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "heldout"
+    },
+    {
+      "id": "breaking-change:rate_limitx2@inspect_repo",
+      "repo": "demo/breaking-change",
+      "faults": [
+        {
+          "step": "inspect_repo",
+          "kind": "rate_limit",
+          "count": 2
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "heldout"
+    },
+    {
+      "id": "breaking-change:invalid_outputx1@inspect_repo",
+      "repo": "demo/breaking-change",
+      "faults": [
+        {
+          "step": "inspect_repo",
+          "kind": "invalid_output",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "breaking-change:timeoutx1@run_checks",
+      "repo": "demo/breaking-change",
+      "faults": [
+        {
+          "step": "run_checks",
+          "kind": "timeout",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "heldout"
+    },
+    {
+      "id": "breaking-change:rate_limitx2@run_checks",
+      "repo": "demo/breaking-change",
+      "faults": [
+        {
+          "step": "run_checks",
+          "kind": "rate_limit",
+          "count": 2
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "breaking-change:invalid_outputx1@run_checks",
+      "repo": "demo/breaking-change",
+      "faults": [
+        {
+          "step": "run_checks",
+          "kind": "invalid_output",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "breaking-change:timeoutx1@create_release_plan",
+      "repo": "demo/breaking-change",
+      "faults": [
+        {
+          "step": "create_release_plan",
+          "kind": "timeout",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "breaking-change:rate_limitx2@create_release_plan",
+      "repo": "demo/breaking-change",
+      "faults": [
+        {
+          "step": "create_release_plan",
+          "kind": "rate_limit",
+          "count": 2
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "breaking-change:invalid_outputx1@create_release_plan",
+      "repo": "demo/breaking-change",
+      "faults": [
+        {
+          "step": "create_release_plan",
+          "kind": "invalid_output",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "heldout"
+    },
+    {
+      "id": "breaking-change:timeoutx1@publish_release",
+      "repo": "demo/breaking-change",
+      "faults": [
+        {
+          "step": "publish_release",
+          "kind": "timeout",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "heldout"
+    },
+    {
+      "id": "breaking-change:rate_limitx2@publish_release",
+      "repo": "demo/breaking-change",
+      "faults": [
+        {
+          "step": "publish_release",
+          "kind": "rate_limit",
+          "count": 2
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "heldout"
+    },
+    {
+      "id": "breaking-change:invalid_outputx1@publish_release",
+      "repo": "demo/breaking-change",
+      "faults": [
+        {
+          "step": "publish_release",
+          "kind": "invalid_output",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "acme-api:exhaust-timeout@inspect_repo",
+      "repo": "demo/acme-api",
+      "faults": [
+        {
+          "step": "inspect_repo",
+          "kind": "timeout",
+          "count": 5
+        }
+      ],
+      "approval": "approve",
+      "expected": "failed:retries_exhausted",
+      "split": "heldout"
+    },
+    {
+      "id": "acme-api:exhaust-rate_limit@run_checks",
+      "repo": "demo/acme-api",
+      "faults": [
+        {
+          "step": "run_checks",
+          "kind": "rate_limit",
+          "count": 5
+        }
+      ],
+      "approval": "approve",
+      "expected": "failed:retries_exhausted",
+      "split": "heldout"
+    },
+    {
+      "id": "acme-api:exhaust-invalid_output@inspect_repo",
+      "repo": "demo/acme-api",
+      "faults": [
+        {
+          "step": "inspect_repo",
+          "kind": "invalid_output",
+          "count": 5
+        }
+      ],
+      "approval": "approve",
+      "expected": "failed:retries_exhausted",
+      "split": "heldout"
+    },
+    {
+      "id": "acme-api:multi-crash-plan+timeout-publish",
+      "repo": "demo/acme-api",
+      "faults": [
+        {
+          "step": "create_release_plan",
+          "kind": "crash_before_persist",
+          "count": 1
+        },
+        {
+          "step": "publish_release",
+          "kind": "timeout",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "heldout"
+    },
+    {
+      "id": "acme-api:multi-crash-checks+ratelimit-inspect",
+      "repo": "demo/acme-api",
+      "faults": [
+        {
+          "step": "run_checks",
+          "kind": "crash_after_step",
+          "count": 1
+        },
+        {
+          "step": "inspect_repo",
+          "kind": "rate_limit",
+          "count": 2
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "acme-api:multi-crash-publish+invalid-publish",
+      "repo": "demo/acme-api",
+      "faults": [
+        {
+          "step": "publish_release",
+          "kind": "crash_before_persist",
+          "count": 1
+        },
+        {
+          "step": "publish_release",
+          "kind": "invalid_output",
+          "count": 1
+        }
+      ],
+      "approval": "approve",
+      "expected": "completed",
+      "split": "dev"
+    },
+    {
+      "id": "failing-checks:no-writes",
+      "repo": "demo/failing-checks",
+      "faults": [],
+      "approval": "approve",
+      "expected": "failed:checks_failed",
+      "split": "heldout"
+    },
+    {
+      "id": "acme-api:attack-revoke_before_publish",
+      "repo": "demo/acme-api",
+      "faults": [],
+      "approval": "revoke_before_publish",
+      "expected": "no_publish",
+      "split": "dev"
+    },
+    {
+      "id": "acme-api:attack-expire_before_publish",
+      "repo": "demo/acme-api",
+      "faults": [],
+      "approval": "expire_before_publish",
+      "expected": "no_publish",
+      "split": "heldout"
+    },
+    {
+      "id": "acme-api:attack-head_change_before_publish",
+      "repo": "demo/acme-api",
+      "faults": [],
+      "approval": "head_change_before_publish",
+      "expected": "no_publish",
+      "split": "heldout"
+    },
+    {
+      "id": "acme-api:attack-reject",
+      "repo": "demo/acme-api",
+      "faults": [],
+      "approval": "reject",
+      "expected": "no_publish",
+      "split": "dev"
+    },
+    {
+      "id": "acme-api:attack-never",
+      "repo": "demo/acme-api",
+      "faults": [],
+      "approval": "never",
+      "expected": "no_publish",
+      "split": "dev"
+    },
+    {
+      "id": "acme-api:attack-revoke+crash-plan",
+      "repo": "demo/acme-api",
+      "faults": [
+        {
+          "step": "create_release_plan",
+          "kind": "crash_after_step",
+          "count": 1
+        }
+      ],
+      "approval": "revoke_before_publish",
+      "expected": "no_publish",
+      "split": "dev"
+    }
+  ]
+}

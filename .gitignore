@@ -1,0 +1,75 @@
+# ---- Project memory and agent instructions: never published ----
+DOCS/
+CLAUDE.md
+AGENTS.md
+GEMINI.md
+.claude/
+.agents/
+.codex/
+.opencode/
+.cursor/
+.planning/
+memory/
+MEMORY.md
+State.md
+Decision.md
+Explain.md
+Design_graph.md
+Testing.md
+Prompt.md
+Prompt_implementationBreif.md
+AgenticSkillsDiscovery.md
+
+# ---- Secrets ----
+.env
+.env.*
+!.env.example
+
+# ---- Supabase CLI local state (contains local-stack keys) ----
+supabase/.temp/
+supabase/.branches/
+
+# ---- Stray root-level Node files (the apps live in frontend/) ----
+/package-lock.json
+/package.json
+/node_modules/
+
+# ---- Python ----
+__pycache__/
+*.pyc
+.venv/
+backend/.venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+# ---- Node / Next.js ----
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+
+# ---- Logs, local databases, editor ----
+*.log
+*.sqlite
+*.sqlite3
+*.db
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ---- Benchmark: raw/local runs are not committed; the published result file is ----
+benchmark/**/results/local-*
+
+# ---- Frontend: design/accessibility working notes are project memory, not published ----
+frontend/DESIGN.md
+frontend/ACCESSIBILITY.md
+frontend/test-results/
+frontend/playwright-report/
+frontend/coverage/

@@ -1,0 +1,353 @@
+{
+  "runs": [
+    {
+      "file": "20261019-210755-llm.json",
+      "config": {
+        "dataset_version": "v1",
+        "seed": 20261020,
+        "scenarios": 61,
+        "repeats": 1,
+        "systems": [
+          "recoveryos",
+          "naive"
+        ],
+        "max_attempts": 3,
+        "retry_delay_seconds": 0,
+        "llm_mode": "llm",
+        "llm_provider": "groq",
+        "llm_models": [
+          "openai/gpt-oss-20b",
+          "qwen/qwen3.8-27b",
+          "openai/gpt-oss-120b"
+        ],
+        "llm_max_output_tokens": 4000,
+        "llm_call_cap_per_scenario": 100,
+        "database": "in-memory SQLite, one fresh database per scenario",
+        "python": "3.13.16",
+        "run_at": "2026-10-19T21:07:55+00:00"
+      },
+      "summary": {
+        "naive": {
+          "all": {
+            "scenarios": 61,
+            "recoverable_scenarios": 51,
+            "recovery_success_rate": 0.7255,
+            "expected_outcome_rate": 0.918,
+            "duplicate_side_effect_rate": 0.2459,
+            "duplicate_side_effects_total": 20,
+            "steps_incorrectly_marked_complete": 4,
+            "scenarios_with_incorrect_complete": 4,
+            "approval_bypass_count": 4,
+            "crash_restarts_total": 28,
+            "time_to_resume_ms_median": 3031.93,
+            "time_to_resume_ms_p95": 5179.14,
+            "resume_samples": 28,
+            "llm_calls_total": 392,
+            "tokens_total": 122097,
+            "tokens_per_completed_workflow": 2261.1,
+            "llm_step_share": 0.5694,
+            "stuck_scenarios": 0,
+            "models_used": {
+              "openai/gpt-oss-120b": 74,
+              "openai/gpt-oss-20b": 55,
+              "qwen/qwen3.8-27b": 35
+            },
+            "fallback_reasons": {
+              "llm_rate_limited": 124
+            }
+          },
+          "dev": {
+            "scenarios": 37,
+            "recoverable_scenarios": 33,
+            "recovery_success_rate": 0.7273,
+            "expected_outcome_rate": 0.9189,
+            "duplicate_side_effect_rate": 0.2703,
+            "duplicate_side_effects_total": 14,
+            "steps_incorrectly_marked_complete": 2,
+            "scenarios_with_incorrect_complete": 2,
+            "approval_bypass_count": 2,
+            "crash_restarts_total": 18,
+            "time_to_resume_ms_median": 3033.95,
+            "time_to_resume_ms_p95": 5546.1,
+            "resume_samples": 18,
+            "llm_calls_total": 251,
+            "tokens_total": 73560,
+            "tokens_per_completed_workflow": 2163.5,
+            "llm_step_share": 0.5297,
+            "stuck_scenarios": 0,
+            "models_used": {
+              "openai/gpt-oss-120b": 47,
+              "openai/gpt-oss-20b": 34,
+              "qwen/qwen3.8-27b": 17
+            },
+            "fallback_reasons": {
+              "llm_rate_limited": 87
+            }
+          },
+          "heldout": {
+            "scenarios": 24,
+            "recoverable_scenarios": 18,
+            "recovery_success_rate": 0.7222,
+            "expected_outcome_rate": 0.9167,
+            "duplicate_side_effect_rate": 0.2083,
+            "duplicate_side_effects_total": 6,
+            "steps_incorrectly_marked_complete": 2,
+            "scenarios_with_incorrect_complete": 2,
+            "approval_bypass_count": 2,
+            "crash_restarts_total": 10,
+            "time_to_resume_ms_median": 2992.5,
+            "time_to_resume_ms_p95": 4682.88,
+            "resume_samples": 10,
+            "llm_calls_total": 141,
+            "tokens_total": 48537,
+            "tokens_per_completed_workflow": 2426.8,
+            "llm_step_share": 0.6408,
+            "stuck_scenarios": 0,
+            "models_used": {
+              "openai/gpt-oss-120b": 27,
+              "openai/gpt-oss-20b": 21,
+              "qwen/qwen3.8-27b": 18
+            },
+            "fallback_reasons": {
+              "llm_rate_limited": 37
+            }
+          }
+        },
+        "recoveryos": {
+          "all": {
+            "scenarios": 61,
+            "recoverable_scenarios": 51,
+            "recovery_success_rate": 1,
+            "expected_outcome_rate": 1,
+            "duplicate_side_effect_rate": 0,
+            "duplicate_side_effects_total": 0,
+            "steps_incorrectly_marked_complete": 0,
+            "scenarios_with_incorrect_complete": 0,
+            "approval_bypass_count": 0,
+            "crash_restarts_total": 28,
+            "time_to_resume_ms_median": 1276.44,
+            "time_to_resume_ms_p95": 5192.68,
+            "resume_samples": 28,
+            "llm_calls_total": 308,
+            "tokens_total": 115711,
+            "tokens_per_completed_workflow": 2268.8,
+            "llm_step_share": 0.6736,
+            "stuck_scenarios": 0,
+            "models_used": {
+              "openai/gpt-oss-120b": 91,
+              "openai/gpt-oss-20b": 68,
+              "qwen/qwen3.8-27b": 35
+            },
+            "fallback_reasons": {
+              "llm_rate_limited": 94
+            }
+          },
+          "dev": {
+            "scenarios": 37,
+            "recoverable_scenarios": 33,
+            "recovery_success_rate": 1,
+            "expected_outcome_rate": 1,
+            "duplicate_side_effect_rate": 0,
+            "duplicate_side_effects_total": 0,
+            "steps_incorrectly_marked_complete": 0,
+            "scenarios_with_incorrect_complete": 0,
+            "approval_bypass_count": 0,
+            "crash_restarts_total": 18,
+            "time_to_resume_ms_median": 1276.44,
+            "time_to_resume_ms_p95": 6528.19,
+            "resume_samples": 18,
+            "llm_calls_total": 197,
+            "tokens_total": 79928,
+            "tokens_per_completed_workflow": 2422.1,
+            "llm_step_share": 0.7189,
+            "stuck_scenarios": 0,
+            "models_used": {
+              "openai/gpt-oss-120b": 63,
+              "openai/gpt-oss-20b": 44,
+              "qwen/qwen3.8-27b": 26
+            },
+            "fallback_reasons": {
+              "llm_rate_limited": 52
+            }
+          },
+          "heldout": {
+            "scenarios": 24,
+            "recoverable_scenarios": 18,
+            "recovery_success_rate": 1,
+            "expected_outcome_rate": 1,
+            "duplicate_side_effect_rate": 0,
+            "duplicate_side_effects_total": 0,
+            "steps_incorrectly_marked_complete": 0,
+            "scenarios_with_incorrect_complete": 0,
+            "approval_bypass_count": 0,
+            "crash_restarts_total": 10,
+            "time_to_resume_ms_median": 1125.04,
+            "time_to_resume_ms_p95": 2910.79,
+            "resume_samples": 10,
+            "llm_calls_total": 111,
+            "tokens_total": 35783,
+            "tokens_per_completed_workflow": 1987.9,
+            "llm_step_share": 0.5922,
+            "stuck_scenarios": 0,
+            "models_used": {
+              "openai/gpt-oss-120b": 28,
+              "openai/gpt-oss-20b": 24,
+              "qwen/qwen3.8-27b": 9
+            },
+            "fallback_reasons": {
+              "llm_rate_limited": 42
+            }
+          }
+        }
+      }
+    },
+    {
+      "file": "20261019-184009-nollm.json",
+      "config": {
+        "dataset_version": "v1",
+        "seed": 20261020,
+        "scenarios": 61,
+        "repeats": 1,
+        "systems": [
+          "recoveryos",
+          "naive"
+        ],
+        "max_attempts": 3,
+        "retry_delay_seconds": 0,
+        "llm_mode": "none: every LLM step used the deterministic fallback",
+        "llm_provider": null,
+        "llm_models": [],
+        "llm_call_cap_per_scenario": 0,
+        "database": "in-memory SQLite, one fresh database per scenario",
+        "python": "3.13.16",
+        "run_at": "2026-10-19T18:40:09+00:00"
+      },
+      "summary": {
+        "naive": {
+          "all": {
+            "scenarios": 61,
+            "recoverable_scenarios": 51,
+            "recovery_success_rate": 0.7255,
+            "expected_outcome_rate": 0.9344,
+            "duplicate_side_effect_rate": 0.2459,
+            "duplicate_side_effects_total": 21,
+            "steps_incorrectly_marked_complete": 4,
+            "scenarios_with_incorrect_complete": 4,
+            "approval_bypass_count": 4,
+            "crash_restarts_total": 28,
+            "time_to_resume_ms_median": 4.49,
+            "time_to_resume_ms_p95": 5.24,
+            "resume_samples": 28,
+            "llm_calls_total": 0,
+            "tokens_total": 0,
+            "tokens_per_completed_workflow": 0,
+            "llm_step_share": 0,
+            "stuck_scenarios": 0
+          },
+          "dev": {
+            "scenarios": 37,
+            "recoverable_scenarios": 33,
+            "recovery_success_rate": 0.7273,
+            "expected_outcome_rate": 0.9459,
+            "duplicate_side_effect_rate": 0.2703,
+            "duplicate_side_effects_total": 15,
+            "steps_incorrectly_marked_complete": 2,
+            "scenarios_with_incorrect_complete": 2,
+            "approval_bypass_count": 2,
+            "crash_restarts_total": 18,
+            "time_to_resume_ms_median": 4.5,
+            "time_to_resume_ms_p95": 5.24,
+            "resume_samples": 18,
+            "llm_calls_total": 0,
+            "tokens_total": 0,
+            "tokens_per_completed_workflow": 0,
+            "llm_step_share": 0,
+            "stuck_scenarios": 0
+          },
+          "heldout": {
+            "scenarios": 24,
+            "recoverable_scenarios": 18,
+            "recovery_success_rate": 0.7222,
+            "expected_outcome_rate": 0.9167,
+            "duplicate_side_effect_rate": 0.2083,
+            "duplicate_side_effects_total": 6,
+            "steps_incorrectly_marked_complete": 2,
+            "scenarios_with_incorrect_complete": 2,
+            "approval_bypass_count": 2,
+            "crash_restarts_total": 10,
+            "time_to_resume_ms_median": 4.46,
+            "time_to_resume_ms_p95": 5.88,
+            "resume_samples": 10,
+            "llm_calls_total": 0,
+            "tokens_total": 0,
+            "tokens_per_completed_workflow": 0,
+            "llm_step_share": 0,
+            "stuck_scenarios": 0
+          }
+        },
+        "recoveryos": {
+          "all": {
+            "scenarios": 61,
+            "recoverable_scenarios": 51,
+            "recovery_success_rate": 1,
+            "expected_outcome_rate": 1,
+            "duplicate_side_effect_rate": 0,
+            "duplicate_side_effects_total": 0,
+            "steps_incorrectly_marked_complete": 0,
+            "scenarios_with_incorrect_complete": 0,
+            "approval_bypass_count": 0,
+            "crash_restarts_total": 28,
+            "time_to_resume_ms_median": 13.2,
+            "time_to_resume_ms_p95": 21.24,
+            "resume_samples": 28,
+            "llm_calls_total": 0,
+            "tokens_total": 0,
+            "tokens_per_completed_workflow": 0,
+            "llm_step_share": 0,
+            "stuck_scenarios": 0
+          },
+          "dev": {
+            "scenarios": 37,
+            "recoverable_scenarios": 33,
+            "recovery_success_rate": 1,
+            "expected_outcome_rate": 1,
+            "duplicate_side_effect_rate": 0,
+            "duplicate_side_effects_total": 0,
+            "steps_incorrectly_marked_complete": 0,
+            "scenarios_with_incorrect_complete": 0,
+            "approval_bypass_count": 0,
+            "crash_restarts_total": 18,
+            "time_to_resume_ms_median": 13.45,
+            "time_to_resume_ms_p95": 21.85,
+            "resume_samples": 18,
+            "llm_calls_total": 0,
+            "tokens_total": 0,
+            "tokens_per_completed_workflow": 0,
+            "llm_step_share": 0,
+            "stuck_scenarios": 0
+          },
+          "heldout": {
+            "scenarios": 24,
+            "recoverable_scenarios": 18,
+            "recovery_success_rate": 1,
+            "expected_outcome_rate": 1,
+            "duplicate_side_effect_rate": 0,
+            "duplicate_side_effects_total": 0,
+            "steps_incorrectly_marked_complete": 0,
+            "scenarios_with_incorrect_complete": 0,
+            "approval_bypass_count": 0,
+            "crash_restarts_total": 10,
+            "time_to_resume_ms_median": 13.2,
+            "time_to_resume_ms_p95": 18.08,
+            "resume_samples": 10,
+            "llm_calls_total": 0,
+            "tokens_total": 0,
+            "tokens_per_completed_workflow": 0,
+            "llm_step_share": 0,
+            "stuck_scenarios": 0
+          }
+        }
+      }
+    }
+  ]
+}

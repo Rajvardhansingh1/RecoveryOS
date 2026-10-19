@@ -1,0 +1,3819 @@
+{
+  "config": {
+    "dataset_version": "v1",
+    "seed": 20261020,
+    "scenarios": 61,
+    "repeats": 1,
+    "systems": [
+      "recoveryos",
+      "naive"
+    ],
+    "max_attempts": 3,
+    "retry_delay_seconds": 0,
+    "llm_mode": "llm",
+    "llm_provider": "groq",
+    "llm_models": [
+      "openai/gpt-oss-20b",
+      "qwen/qwen3.8-27b",
+      "openai/gpt-oss-120b"
+    ],
+    "llm_max_output_tokens": 4000,
+    "llm_call_cap_per_scenario": 100,
+    "database": "in-memory SQLite, one fresh database per scenario",
+    "python": "3.13.16",
+    "run_at": "2026-10-19T21:07:55+00:00"
+  },
+  "summary": {
+    "naive": {
+      "all": {
+        "scenarios": 61,
+        "recoverable_scenarios": 51,
+        "recovery_success_rate": 0.7255,
+        "expected_outcome_rate": 0.918,
+        "duplicate_side_effect_rate": 0.2459,
+        "duplicate_side_effects_total": 20,
+        "steps_incorrectly_marked_complete": 4,
+        "scenarios_with_incorrect_complete": 4,
+        "approval_bypass_count": 4,
+        "crash_restarts_total": 28,
+        "time_to_resume_ms_median": 3031.93,
+        "time_to_resume_ms_p95": 5179.14,
+        "resume_samples": 28,
+        "llm_calls_total": 392,
+        "tokens_total": 122097,
+        "tokens_per_completed_workflow": 2261.1,
+        "llm_step_share": 0.5694,
+        "stuck_scenarios": 0,
+        "models_used": {
+          "openai/gpt-oss-120b": 74,
+          "openai/gpt-oss-20b": 55,
+          "qwen/qwen3.8-27b": 35
+        },
+        "fallback_reasons": {
+          "llm_rate_limited": 124
+        }
+      },
+      "dev": {
+        "scenarios": 37,
+        "recoverable_scenarios": 33,
+        "recovery_success_rate": 0.7273,
+        "expected_outcome_rate": 0.9189,
+        "duplicate_side_effect_rate": 0.2703,
+        "duplicate_side_effects_total": 14,
+        "steps_incorrectly_marked_complete": 2,
+        "scenarios_with_incorrect_complete": 2,
+        "approval_bypass_count": 2,
+        "crash_restarts_total": 18,
+        "time_to_resume_ms_median": 3033.95,
+        "time_to_resume_ms_p95": 5546.1,
+        "resume_samples": 18,
+        "llm_calls_total": 251,
+        "tokens_total": 73560,
+        "tokens_per_completed_workflow": 2163.5,
+        "llm_step_share": 0.5297,
+        "stuck_scenarios": 0,
+        "models_used": {
+          "openai/gpt-oss-120b": 47,
+          "openai/gpt-oss-20b": 34,
+          "qwen/qwen3.8-27b": 17
+        },
+        "fallback_reasons": {
+          "llm_rate_limited": 87
+        }
+      },
+      "heldout": {
+        "scenarios": 24,
+        "recoverable_scenarios": 18,
+        "recovery_success_rate": 0.7222,
+        "expected_outcome_rate": 0.9167,
+        "duplicate_side_effect_rate": 0.2083,
+        "duplicate_side_effects_total": 6,
+        "steps_incorrectly_marked_complete": 2,
+        "scenarios_with_incorrect_complete": 2,
+        "approval_bypass_count": 2,
+        "crash_restarts_total": 10,
+        "time_to_resume_ms_median": 2992.5,
+        "time_to_resume_ms_p95": 4682.88,
+        "resume_samples": 10,
+        "llm_calls_total": 141,
+        "tokens_total": 48537,
+        "tokens_per_completed_workflow": 2426.8,
+        "llm_step_share": 0.6408,
+        "stuck_scenarios": 0,
+        "models_used": {
+          "openai/gpt-oss-120b": 27,
+          "openai/gpt-oss-20b": 21,
+          "qwen/qwen3.8-27b": 18
+        },
+        "fallback_reasons": {
+          "llm_rate_limited": 37
+        }
+      }
+    },
+    "recoveryos": {
+      "all": {
+        "scenarios": 61,
+        "recoverable_scenarios": 51,
+        "recovery_success_rate": 1.0,
+        "expected_outcome_rate": 1.0,
+        "duplicate_side_effect_rate": 0.0,
+        "duplicate_side_effects_total": 0,
+        "steps_incorrectly_marked_complete": 0,
+        "scenarios_with_incorrect_complete": 0,
+        "approval_bypass_count": 0,
+        "crash_restarts_total": 28,
+        "time_to_resume_ms_median": 1276.44,
+        "time_to_resume_ms_p95": 5192.68,
+        "resume_samples": 28,
+        "llm_calls_total": 308,
+        "tokens_total": 115711,
+        "tokens_per_completed_workflow": 2268.8,
+        "llm_step_share": 0.6736,
+        "stuck_scenarios": 0,
+        "models_used": {
+          "openai/gpt-oss-120b": 91,
+          "openai/gpt-oss-20b": 68,
+          "qwen/qwen3.8-27b": 35
+        },
+        "fallback_reasons": {
+          "llm_rate_limited": 94
+        }
+      },
+      "dev": {
+        "scenarios": 37,
+        "recoverable_scenarios": 33,
+        "recovery_success_rate": 1.0,
+        "expected_outcome_rate": 1.0,
+        "duplicate_side_effect_rate": 0.0,
+        "duplicate_side_effects_total": 0,
+        "steps_incorrectly_marked_complete": 0,
+        "scenarios_with_incorrect_complete": 0,
+        "approval_bypass_count": 0,
+        "crash_restarts_total": 18,
+        "time_to_resume_ms_median": 1276.44,
+        "time_to_resume_ms_p95": 6528.19,
+        "resume_samples": 18,
+        "llm_calls_total": 197,
+        "tokens_total": 79928,
+        "tokens_per_completed_workflow": 2422.1,
+        "llm_step_share": 0.7189,
+        "stuck_scenarios": 0,
+        "models_used": {
+          "openai/gpt-oss-120b": 63,
+          "openai/gpt-oss-20b": 44,
+          "qwen/qwen3.8-27b": 26
+        },
+        "fallback_reasons": {
+          "llm_rate_limited": 52
+        }
+      },
+      "heldout": {
+        "scenarios": 24,
+        "recoverable_scenarios": 18,
+        "recovery_success_rate": 1.0,
+        "expected_outcome_rate": 1.0,
+        "duplicate_side_effect_rate": 0.0,
+        "duplicate_side_effects_total": 0,
+        "steps_incorrectly_marked_complete": 0,
+        "scenarios_with_incorrect_complete": 0,
+        "approval_bypass_count": 0,
+        "crash_restarts_total": 10,
+        "time_to_resume_ms_median": 1125.04,
+        "time_to_resume_ms_p95": 2910.79,
+        "resume_samples": 10,
+        "llm_calls_total": 111,
+        "tokens_total": 35783,
+        "tokens_per_completed_workflow": 1987.9,
+        "llm_step_share": 0.5922,
+        "stuck_scenarios": 0,
+        "models_used": {
+          "openai/gpt-oss-120b": 28,
+          "openai/gpt-oss-20b": 24,
+          "qwen/qwen3.8-27b": 9
+        },
+        "fallback_reasons": {
+          "llm_rate_limited": 42
+        }
+      }
+    }
+  },
+  "runs": [
+    {
+      "scenario_id": "acme-api:crash_after_step@inspect_repo",
+      "split": "heldout",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        2910.7853999994404
+      ],
+      "llm_calls": 5,
+      "tokens": 3187,
+      "llm_steps": 5,
+      "fallback_steps": 0,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 5
+      },
+      "fallback_reasons": {}
+    },
+    {
+      "scenario_id": "acme-api:crash_after_step@inspect_repo",
+      "split": "heldout",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        3724.1016999996646
+      ],
+      "llm_calls": 6,
+      "tokens": 3445,
+      "llm_steps": 5,
+      "fallback_steps": 0,
+      "stuck": false,
+      "models": {
+        "qwen/qwen3.8-27b": 3,
+        "openai/gpt-oss-120b": 2
+      },
+      "fallback_reasons": {}
+    },
+    {
+      "scenario_id": "acme-api:crash_before_persist@inspect_repo",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        5192.677700000786
+      ],
+      "llm_calls": 6,
+      "tokens": 3648,
+      "llm_steps": 5,
+      "fallback_steps": 0,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 3,
+        "openai/gpt-oss-20b": 2
+      },
+      "fallback_reasons": {}
+    },
+    {
+      "scenario_id": "acme-api:crash_before_persist@inspect_repo",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        5179.138199999215
+      ],
+      "llm_calls": 6,
+      "tokens": 3592,
+      "llm_steps": 5,
+      "fallback_steps": 0,
+      "stuck": false,
+      "models": {
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-20b": 1,
+        "openai/gpt-oss-120b": 3
+      },
+      "fallback_reasons": {}
+    },
+    {
+      "scenario_id": "acme-api:crash_after_step@run_checks",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        3580.025499999465
+      ],
+      "llm_calls": 5,
+      "tokens": 3208,
+      "llm_steps": 5,
+      "fallback_steps": 0,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 1,
+        "openai/gpt-oss-120b": 4
+      },
+      "fallback_reasons": {}
+    },
+    {
+      "scenario_id": "acme-api:crash_after_step@run_checks",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        2936.432100001184
+      ],
+      "llm_calls": 7,
+      "tokens": 2341,
+      "llm_steps": 2,
+      "fallback_steps": 3,
+      "stuck": false,
+      "models": {
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 3
+      }
+    },
+    {
+      "scenario_id": "acme-api:crash_before_persist@run_checks",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        2279.247899999973
+      ],
+      "llm_calls": 6,
+      "tokens": 1431,
+      "llm_steps": 2,
+      "fallback_steps": 3,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 1,
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 3
+      }
+    },
+    {
+      "scenario_id": "acme-api:crash_before_persist@run_checks",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        2832.4144999987766
+      ],
+      "llm_calls": 7,
+      "tokens": 1210,
+      "llm_steps": 2,
+      "fallback_steps": 3,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 1,
+        "qwen/qwen3.8-27b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 3
+      }
+    },
+    {
+      "scenario_id": "acme-api:crash_after_step@prepare_changelog",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        1879.201900001135
+      ],
+      "llm_calls": 5,
+      "tokens": 1896,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 2,
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "acme-api:crash_after_step@prepare_changelog",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        3324.81849999931
+      ],
+      "llm_calls": 8,
+      "tokens": 1691,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 1,
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "acme-api:crash_before_persist@prepare_changelog",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        3833.1347000003007
+      ],
+      "llm_calls": 6,
+      "tokens": 1470,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 2,
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "acme-api:crash_before_persist@prepare_changelog",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        3941.3683999991918
+      ],
+      "llm_calls": 8,
+      "tokens": 3482,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 1,
+        "openai/gpt-oss-20b": 2
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "acme-api:crash_after_step@validate_version",
+      "split": "heldout",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        618.7307999989571
+      ],
+      "llm_calls": 5,
+      "tokens": 1426,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 2,
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "acme-api:crash_after_step@validate_version",
+      "split": "heldout",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        2557.852100000673
+      ],
+      "llm_calls": 9,
+      "tokens": 2452,
+      "llm_steps": 2,
+      "fallback_steps": 3,
+      "stuck": false,
+      "models": {
+        "qwen/qwen3.8-27b": 2
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 3
+      }
+    },
+    {
+      "scenario_id": "acme-api:crash_before_persist@validate_version",
+      "split": "heldout",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        1793.4319000014511
+      ],
+      "llm_calls": 6,
+      "tokens": 2088,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 2,
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "acme-api:crash_before_persist@validate_version",
+      "split": "heldout",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        4682.878399999026
+      ],
+      "llm_calls": 9,
+      "tokens": 3018,
+      "llm_steps": 4,
+      "fallback_steps": 1,
+      "stuck": false,
+      "models": {
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-120b": 2,
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 1
+      }
+    },
+    {
+      "scenario_id": "acme-api:crash_after_step@create_release_plan",
+      "split": "heldout",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        13.509099999282626
+      ],
+      "llm_calls": 5,
+      "tokens": 477,
+      "llm_steps": 1,
+      "fallback_steps": 4,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 4
+      }
+    },
+    {
+      "scenario_id": "acme-api:crash_after_step@create_release_plan",
+      "split": "heldout",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": false,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 2,
+      "duplicate_effects": 1,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        3082.062699999369
+      ],
+      "llm_calls": 10,
+      "tokens": 2524,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 1,
+        "openai/gpt-oss-20b": 1,
+        "qwen/qwen3.8-27b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "acme-api:crash_before_persist@create_release_plan",
+      "split": "heldout",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        462.4899999998888
+      ],
+      "llm_calls": 6,
+      "tokens": 2193,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 1,
+        "openai/gpt-oss-120b": 2
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "acme-api:crash_before_persist@create_release_plan",
+      "split": "heldout",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": false,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 2,
+      "duplicate_effects": 1,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        2668.833199999426
+      ],
+      "llm_calls": 10,
+      "tokens": 1209,
+      "llm_steps": 1,
+      "fallback_steps": 4,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 4
+      }
+    },
+    {
+      "scenario_id": "acme-api:crash_after_step@publish_release",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        3.2250999993266305
+      ],
+      "llm_calls": 5,
+      "tokens": 2856,
+      "llm_steps": 5,
+      "fallback_steps": 0,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 1,
+        "openai/gpt-oss-120b": 3,
+        "qwen/qwen3.8-27b": 1
+      },
+      "fallback_reasons": {}
+    },
+    {
+      "scenario_id": "acme-api:crash_after_step@publish_release",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "awaiting_approval",
+      "recoverable": true,
+      "recovered_exactly_once": false,
+      "outcome_matches": false,
+      "publish_applied": 1,
+      "draft_applied": 2,
+      "duplicate_effects": 1,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        5546.095499999865
+      ],
+      "llm_calls": 10,
+      "tokens": 5703,
+      "llm_steps": 5,
+      "fallback_steps": 0,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 2,
+        "openai/gpt-oss-20b": 2,
+        "qwen/qwen3.8-27b": 1
+      },
+      "fallback_reasons": {}
+    },
+    {
+      "scenario_id": "acme-api:crash_before_persist@publish_release",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        9.353299999929732
+      ],
+      "llm_calls": 5,
+      "tokens": 2152,
+      "llm_steps": 4,
+      "fallback_steps": 1,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 2,
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 1
+      }
+    },
+    {
+      "scenario_id": "acme-api:crash_before_persist@publish_release",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": false,
+      "outcome_matches": true,
+      "publish_applied": 2,
+      "draft_applied": 2,
+      "duplicate_effects": 2,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        3727.5813999985985
+      ],
+      "llm_calls": 10,
+      "tokens": 2442,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 1,
+        "openai/gpt-oss-120b": 2
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "acme-api:timeoutx1@inspect_repo",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 2889,
+      "llm_steps": 5,
+      "fallback_steps": 0,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 2,
+        "openai/gpt-oss-120b": 2,
+        "qwen/qwen3.8-27b": 1
+      },
+      "fallback_reasons": {}
+    },
+    {
+      "scenario_id": "acme-api:timeoutx1@inspect_repo",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 871,
+      "llm_steps": 2,
+      "fallback_steps": 3,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 1,
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 3
+      }
+    },
+    {
+      "scenario_id": "acme-api:rate_limitx2@inspect_repo",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 1857,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 2,
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "acme-api:rate_limitx2@inspect_repo",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 865,
+      "llm_steps": 2,
+      "fallback_steps": 3,
+      "stuck": false,
+      "models": {
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 3
+      }
+    },
+    {
+      "scenario_id": "acme-api:invalid_outputx1@inspect_repo",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 2848,
+      "llm_steps": 5,
+      "fallback_steps": 0,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 2,
+        "openai/gpt-oss-20b": 2,
+        "qwen/qwen3.8-27b": 1
+      },
+      "fallback_reasons": {}
+    },
+    {
+      "scenario_id": "acme-api:invalid_outputx1@inspect_repo",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 1466,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 2,
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "acme-api:timeoutx1@run_checks",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 1279,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 1,
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "acme-api:timeoutx1@run_checks",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 1244,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 1,
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "acme-api:rate_limitx2@run_checks",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 2360,
+      "llm_steps": 4,
+      "fallback_steps": 1,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 1,
+        "openai/gpt-oss-120b": 2,
+        "qwen/qwen3.8-27b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 1
+      }
+    },
+    {
+      "scenario_id": "acme-api:rate_limitx2@run_checks",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 1491,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 2,
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "acme-api:invalid_outputx1@run_checks",
+      "split": "heldout",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 577,
+      "llm_steps": 1,
+      "fallback_steps": 4,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 4
+      }
+    },
+    {
+      "scenario_id": "acme-api:invalid_outputx1@run_checks",
+      "split": "heldout",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 2444,
+      "llm_steps": 4,
+      "fallback_steps": 1,
+      "stuck": false,
+      "models": {
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-20b": 2,
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 1
+      }
+    },
+    {
+      "scenario_id": "acme-api:timeoutx1@create_release_plan",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 6,
+      "tokens": 2276,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 1,
+        "openai/gpt-oss-20b": 2
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "acme-api:timeoutx1@create_release_plan",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": false,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 2,
+      "duplicate_effects": 1,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 6,
+      "tokens": 1812,
+      "llm_steps": 2,
+      "fallback_steps": 3,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 1,
+        "qwen/qwen3.8-27b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 3
+      }
+    },
+    {
+      "scenario_id": "acme-api:rate_limitx2@create_release_plan",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 7,
+      "tokens": 2017,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 1,
+        "openai/gpt-oss-120b": 2
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "acme-api:rate_limitx2@create_release_plan",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 7,
+      "tokens": 2846,
+      "llm_steps": 4,
+      "fallback_steps": 1,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 1,
+        "openai/gpt-oss-120b": 2,
+        "qwen/qwen3.8-27b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 1
+      }
+    },
+    {
+      "scenario_id": "acme-api:invalid_outputx1@create_release_plan",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 6,
+      "tokens": 2356,
+      "llm_steps": 4,
+      "fallback_steps": 1,
+      "stuck": false,
+      "models": {
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-120b": 2,
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 1
+      }
+    },
+    {
+      "scenario_id": "acme-api:invalid_outputx1@create_release_plan",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 1,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 725,
+      "llm_steps": 1,
+      "fallback_steps": 4,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 4
+      }
+    },
+    {
+      "scenario_id": "acme-api:timeoutx1@publish_release",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 1540,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 1,
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "acme-api:timeoutx1@publish_release",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": false,
+      "outcome_matches": true,
+      "publish_applied": 2,
+      "draft_applied": 1,
+      "duplicate_effects": 1,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 1670,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 1,
+        "openai/gpt-oss-120b": 1,
+        "qwen/qwen3.8-27b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "acme-api:rate_limitx2@publish_release",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 2039,
+      "llm_steps": 4,
+      "fallback_steps": 1,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 2,
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 1
+      }
+    },
+    {
+      "scenario_id": "acme-api:rate_limitx2@publish_release",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 2199,
+      "llm_steps": 4,
+      "fallback_steps": 1,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 2,
+        "openai/gpt-oss-20b": 2
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 1
+      }
+    },
+    {
+      "scenario_id": "acme-api:invalid_outputx1@publish_release",
+      "split": "heldout",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 1205,
+      "llm_steps": 2,
+      "fallback_steps": 3,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 1,
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 3
+      }
+    },
+    {
+      "scenario_id": "acme-api:invalid_outputx1@publish_release",
+      "split": "heldout",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 1,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 2961,
+      "llm_steps": 5,
+      "fallback_steps": 0,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 1,
+        "qwen/qwen3.8-27b": 2,
+        "openai/gpt-oss-120b": 2
+      },
+      "fallback_reasons": {}
+    },
+    {
+      "scenario_id": "breaking-change:crash_after_step@inspect_repo",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        6528.188599999339
+      ],
+      "llm_calls": 6,
+      "tokens": 3835,
+      "llm_steps": 5,
+      "fallback_steps": 0,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 3,
+        "openai/gpt-oss-20b": 1,
+        "qwen/qwen3.8-27b": 1
+      },
+      "fallback_reasons": {}
+    },
+    {
+      "scenario_id": "breaking-change:crash_after_step@inspect_repo",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        2983.0744999999297
+      ],
+      "llm_calls": 6,
+      "tokens": 1873,
+      "llm_steps": 2,
+      "fallback_steps": 3,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 1,
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 3
+      }
+    },
+    {
+      "scenario_id": "breaking-change:crash_before_persist@inspect_repo",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        3825.0781999995525
+      ],
+      "llm_calls": 6,
+      "tokens": 2396,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 1,
+        "openai/gpt-oss-20b": 2
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "breaking-change:crash_before_persist@inspect_repo",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        3068.9733999988675
+      ],
+      "llm_calls": 6,
+      "tokens": 1493,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-120b": 1,
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "breaking-change:crash_after_step@run_checks",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        1261.2298000003648
+      ],
+      "llm_calls": 5,
+      "tokens": 838,
+      "llm_steps": 1,
+      "fallback_steps": 4,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 4
+      }
+    },
+    {
+      "scenario_id": "breaking-change:crash_after_step@run_checks",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        5047.9307000005065
+      ],
+      "llm_calls": 7,
+      "tokens": 2786,
+      "llm_steps": 4,
+      "fallback_steps": 1,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 2,
+        "openai/gpt-oss-20b": 2
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 1
+      }
+    },
+    {
+      "scenario_id": "breaking-change:crash_before_persist@run_checks",
+      "split": "heldout",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        2792.56069999974
+      ],
+      "llm_calls": 6,
+      "tokens": 1586,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-20b": 1,
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "breaking-change:crash_before_persist@run_checks",
+      "split": "heldout",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        3064.937299999656
+      ],
+      "llm_calls": 7,
+      "tokens": 1207,
+      "llm_steps": 2,
+      "fallback_steps": 3,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 1,
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 3
+      }
+    },
+    {
+      "scenario_id": "breaking-change:crash_after_step@prepare_changelog",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        1338.753899999574
+      ],
+      "llm_calls": 5,
+      "tokens": 2117,
+      "llm_steps": 4,
+      "fallback_steps": 1,
+      "stuck": false,
+      "models": {
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-20b": 1,
+        "openai/gpt-oss-120b": 2
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 1
+      }
+    },
+    {
+      "scenario_id": "breaking-change:crash_after_step@prepare_changelog",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        2056.7511999997805
+      ],
+      "llm_calls": 8,
+      "tokens": 1987,
+      "llm_steps": 1,
+      "fallback_steps": 4,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 4
+      }
+    },
+    {
+      "scenario_id": "breaking-change:crash_before_persist@prepare_changelog",
+      "split": "heldout",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        1392.7088999989792
+      ],
+      "llm_calls": 6,
+      "tokens": 1556,
+      "llm_steps": 2,
+      "fallback_steps": 3,
+      "stuck": false,
+      "models": {
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 3
+      }
+    },
+    {
+      "scenario_id": "breaking-change:crash_before_persist@prepare_changelog",
+      "split": "heldout",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        2920.0681999991502
+      ],
+      "llm_calls": 8,
+      "tokens": 4066,
+      "llm_steps": 4,
+      "fallback_steps": 1,
+      "stuck": false,
+      "models": {
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-120b": 2,
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 1
+      }
+    },
+    {
+      "scenario_id": "breaking-change:crash_after_step@validate_version",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        847.0846000000165
+      ],
+      "llm_calls": 5,
+      "tokens": 901,
+      "llm_steps": 2,
+      "fallback_steps": 3,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 2
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 3
+      }
+    },
+    {
+      "scenario_id": "breaking-change:crash_after_step@validate_version",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        2998.9298000000417
+      ],
+      "llm_calls": 9,
+      "tokens": 2587,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 1,
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "breaking-change:crash_before_persist@validate_version",
+      "split": "heldout",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        1415.404800000033
+      ],
+      "llm_calls": 6,
+      "tokens": 1403,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 2,
+        "qwen/qwen3.8-27b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "breaking-change:crash_before_persist@validate_version",
+      "split": "heldout",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        3101.0433999999805
+      ],
+      "llm_calls": 9,
+      "tokens": 1897,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 2,
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "breaking-change:crash_after_step@create_release_plan",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        8.092000000033295
+      ],
+      "llm_calls": 5,
+      "tokens": 2004,
+      "llm_steps": 4,
+      "fallback_steps": 1,
+      "stuck": false,
+      "models": {
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-20b": 2,
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 1
+      }
+    },
+    {
+      "scenario_id": "breaking-change:crash_after_step@create_release_plan",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": false,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 2,
+      "duplicate_effects": 1,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        3904.2938000002323
+      ],
+      "llm_calls": 11,
+      "tokens": 2536,
+      "llm_steps": 2,
+      "fallback_steps": 3,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 1,
+        "qwen/qwen3.8-27b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 3
+      }
+    },
+    {
+      "scenario_id": "breaking-change:crash_before_persist@create_release_plan",
+      "split": "heldout",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        857.3787000004813
+      ],
+      "llm_calls": 6,
+      "tokens": 1141,
+      "llm_steps": 2,
+      "fallback_steps": 3,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 2
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 3
+      }
+    },
+    {
+      "scenario_id": "breaking-change:crash_before_persist@create_release_plan",
+      "split": "heldout",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": false,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 2,
+      "duplicate_effects": 1,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        2605.165599999964
+      ],
+      "llm_calls": 10,
+      "tokens": 2932,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 2,
+        "qwen/qwen3.8-27b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "breaking-change:crash_after_step@publish_release",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        4.137599999012309
+      ],
+      "llm_calls": 5,
+      "tokens": 1825,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 1,
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "breaking-change:crash_after_step@publish_release",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": false,
+      "outcome_matches": true,
+      "publish_applied": 2,
+      "draft_applied": 2,
+      "duplicate_effects": 2,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        2379.9510999997437
+      ],
+      "llm_calls": 10,
+      "tokens": 1821,
+      "llm_steps": 2,
+      "fallback_steps": 3,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 1,
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 3
+      }
+    },
+    {
+      "scenario_id": "breaking-change:crash_before_persist@publish_release",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        8.827300000120886
+      ],
+      "llm_calls": 5,
+      "tokens": 2209,
+      "llm_steps": 4,
+      "fallback_steps": 1,
+      "stuck": false,
+      "models": {
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-20b": 2,
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 1
+      }
+    },
+    {
+      "scenario_id": "breaking-change:crash_before_persist@publish_release",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": false,
+      "outcome_matches": true,
+      "publish_applied": 2,
+      "draft_applied": 2,
+      "duplicate_effects": 2,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        2519.785000000411
+      ],
+      "llm_calls": 10,
+      "tokens": 1917,
+      "llm_steps": 1,
+      "fallback_steps": 4,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 4
+      }
+    },
+    {
+      "scenario_id": "breaking-change:timeoutx1@inspect_repo",
+      "split": "heldout",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 1455,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 1,
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "breaking-change:timeoutx1@inspect_repo",
+      "split": "heldout",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 2180,
+      "llm_steps": 4,
+      "fallback_steps": 1,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 2,
+        "openai/gpt-oss-120b": 1,
+        "qwen/qwen3.8-27b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 1
+      }
+    },
+    {
+      "scenario_id": "breaking-change:rate_limitx2@inspect_repo",
+      "split": "heldout",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 979,
+      "llm_steps": 2,
+      "fallback_steps": 3,
+      "stuck": false,
+      "models": {
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 3
+      }
+    },
+    {
+      "scenario_id": "breaking-change:rate_limitx2@inspect_repo",
+      "split": "heldout",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 3127,
+      "llm_steps": 5,
+      "fallback_steps": 0,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 2,
+        "openai/gpt-oss-20b": 2,
+        "qwen/qwen3.8-27b": 1
+      },
+      "fallback_reasons": {}
+    },
+    {
+      "scenario_id": "breaking-change:invalid_outputx1@inspect_repo",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 2817,
+      "llm_steps": 5,
+      "fallback_steps": 0,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 2,
+        "openai/gpt-oss-20b": 2,
+        "qwen/qwen3.8-27b": 1
+      },
+      "fallback_reasons": {}
+    },
+    {
+      "scenario_id": "breaking-change:invalid_outputx1@inspect_repo",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 2209,
+      "llm_steps": 4,
+      "fallback_steps": 1,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 2,
+        "openai/gpt-oss-20b": 1,
+        "qwen/qwen3.8-27b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 1
+      }
+    },
+    {
+      "scenario_id": "breaking-change:timeoutx1@run_checks",
+      "split": "heldout",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 2762,
+      "llm_steps": 5,
+      "fallback_steps": 0,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 2,
+        "openai/gpt-oss-120b": 2,
+        "qwen/qwen3.8-27b": 1
+      },
+      "fallback_reasons": {}
+    },
+    {
+      "scenario_id": "breaking-change:timeoutx1@run_checks",
+      "split": "heldout",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 1866,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 1,
+        "openai/gpt-oss-20b": 2
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "breaking-change:rate_limitx2@run_checks",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 2707,
+      "llm_steps": 5,
+      "fallback_steps": 0,
+      "stuck": false,
+      "models": {
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-120b": 3,
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {}
+    },
+    {
+      "scenario_id": "breaking-change:rate_limitx2@run_checks",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 1568,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 1,
+        "openai/gpt-oss-20b": 2
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "breaking-change:invalid_outputx1@run_checks",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 2727,
+      "llm_steps": 5,
+      "fallback_steps": 0,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 1,
+        "openai/gpt-oss-20b": 2,
+        "qwen/qwen3.8-27b": 2
+      },
+      "fallback_reasons": {}
+    },
+    {
+      "scenario_id": "breaking-change:invalid_outputx1@run_checks",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 1479,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 2,
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "breaking-change:timeoutx1@create_release_plan",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 6,
+      "tokens": 3218,
+      "llm_steps": 5,
+      "fallback_steps": 0,
+      "stuck": false,
+      "models": {
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-20b": 1,
+        "openai/gpt-oss-120b": 3
+      },
+      "fallback_reasons": {}
+    },
+    {
+      "scenario_id": "breaking-change:timeoutx1@create_release_plan",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": false,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 2,
+      "duplicate_effects": 1,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 6,
+      "tokens": 1800,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 2,
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "breaking-change:rate_limitx2@create_release_plan",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 7,
+      "tokens": 2027,
+      "llm_steps": 2,
+      "fallback_steps": 3,
+      "stuck": false,
+      "models": {
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 3
+      }
+    },
+    {
+      "scenario_id": "breaking-change:rate_limitx2@create_release_plan",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 7,
+      "tokens": 911,
+      "llm_steps": 1,
+      "fallback_steps": 4,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 4
+      }
+    },
+    {
+      "scenario_id": "breaking-change:invalid_outputx1@create_release_plan",
+      "split": "heldout",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 6,
+      "tokens": 2276,
+      "llm_steps": 4,
+      "fallback_steps": 1,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 1,
+        "openai/gpt-oss-120b": 2,
+        "qwen/qwen3.8-27b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 1
+      }
+    },
+    {
+      "scenario_id": "breaking-change:invalid_outputx1@create_release_plan",
+      "split": "heldout",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 1,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 1250,
+      "llm_steps": 2,
+      "fallback_steps": 3,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 1,
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 3
+      }
+    },
+    {
+      "scenario_id": "breaking-change:timeoutx1@publish_release",
+      "split": "heldout",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 1533,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 1,
+        "openai/gpt-oss-120b": 1,
+        "qwen/qwen3.8-27b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "breaking-change:timeoutx1@publish_release",
+      "split": "heldout",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": false,
+      "outcome_matches": true,
+      "publish_applied": 2,
+      "draft_applied": 1,
+      "duplicate_effects": 1,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 1911,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 1,
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "breaking-change:rate_limitx2@publish_release",
+      "split": "heldout",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 860,
+      "llm_steps": 2,
+      "fallback_steps": 3,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 1,
+        "qwen/qwen3.8-27b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 3
+      }
+    },
+    {
+      "scenario_id": "breaking-change:rate_limitx2@publish_release",
+      "split": "heldout",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 1479,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 2,
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "breaking-change:invalid_outputx1@publish_release",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 2295,
+      "llm_steps": 4,
+      "fallback_steps": 1,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 1,
+        "qwen/qwen3.8-27b": 2,
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 1
+      }
+    },
+    {
+      "scenario_id": "breaking-change:invalid_outputx1@publish_release",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 1,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 866,
+      "llm_steps": 2,
+      "fallback_steps": 3,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 2
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 3
+      }
+    },
+    {
+      "scenario_id": "acme-api:exhaust-timeout@inspect_repo",
+      "split": "heldout",
+      "system": "recoveryos",
+      "expected": "failed:retries_exhausted",
+      "status": "failed:retries_exhausted",
+      "recoverable": false,
+      "recovered_exactly_once": false,
+      "outcome_matches": true,
+      "publish_applied": 0,
+      "draft_applied": 0,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 0,
+      "tokens": 0,
+      "llm_steps": 0,
+      "fallback_steps": 0,
+      "stuck": false,
+      "models": {},
+      "fallback_reasons": {}
+    },
+    {
+      "scenario_id": "acme-api:exhaust-timeout@inspect_repo",
+      "split": "heldout",
+      "system": "naive",
+      "expected": "failed:retries_exhausted",
+      "status": "failed:retries_exhausted",
+      "recoverable": false,
+      "recovered_exactly_once": false,
+      "outcome_matches": true,
+      "publish_applied": 0,
+      "draft_applied": 0,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 0,
+      "tokens": 0,
+      "llm_steps": 0,
+      "fallback_steps": 0,
+      "stuck": false,
+      "models": {},
+      "fallback_reasons": {}
+    },
+    {
+      "scenario_id": "acme-api:exhaust-rate_limit@run_checks",
+      "split": "heldout",
+      "system": "recoveryos",
+      "expected": "failed:retries_exhausted",
+      "status": "failed:retries_exhausted",
+      "recoverable": false,
+      "recovered_exactly_once": false,
+      "outcome_matches": true,
+      "publish_applied": 0,
+      "draft_applied": 0,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 1,
+      "tokens": 1028,
+      "llm_steps": 1,
+      "fallback_steps": 0,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {}
+    },
+    {
+      "scenario_id": "acme-api:exhaust-rate_limit@run_checks",
+      "split": "heldout",
+      "system": "naive",
+      "expected": "failed:retries_exhausted",
+      "status": "failed:retries_exhausted",
+      "recoverable": false,
+      "recovered_exactly_once": false,
+      "outcome_matches": true,
+      "publish_applied": 0,
+      "draft_applied": 0,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 1,
+      "tokens": 569,
+      "llm_steps": 1,
+      "fallback_steps": 0,
+      "stuck": false,
+      "models": {
+        "qwen/qwen3.8-27b": 1
+      },
+      "fallback_reasons": {}
+    },
+    {
+      "scenario_id": "acme-api:exhaust-invalid_output@inspect_repo",
+      "split": "heldout",
+      "system": "recoveryos",
+      "expected": "failed:retries_exhausted",
+      "status": "failed:retries_exhausted",
+      "recoverable": false,
+      "recovered_exactly_once": false,
+      "outcome_matches": true,
+      "publish_applied": 0,
+      "draft_applied": 0,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 0,
+      "tokens": 0,
+      "llm_steps": 0,
+      "fallback_steps": 0,
+      "stuck": false,
+      "models": {},
+      "fallback_reasons": {}
+    },
+    {
+      "scenario_id": "acme-api:exhaust-invalid_output@inspect_repo",
+      "split": "heldout",
+      "system": "naive",
+      "expected": "failed:retries_exhausted",
+      "status": "failed:retries_exhausted",
+      "recoverable": false,
+      "recovered_exactly_once": false,
+      "outcome_matches": true,
+      "publish_applied": 0,
+      "draft_applied": 0,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 0,
+      "tokens": 0,
+      "llm_steps": 0,
+      "fallback_steps": 0,
+      "stuck": false,
+      "models": {},
+      "fallback_reasons": {}
+    },
+    {
+      "scenario_id": "acme-api:multi-crash-plan+timeout-publish",
+      "split": "heldout",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        762.6609999988432
+      ],
+      "llm_calls": 6,
+      "tokens": 3074,
+      "llm_steps": 5,
+      "fallback_steps": 0,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 2,
+        "openai/gpt-oss-120b": 3
+      },
+      "fallback_reasons": {}
+    },
+    {
+      "scenario_id": "acme-api:multi-crash-plan+timeout-publish",
+      "split": "heldout",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": false,
+      "outcome_matches": true,
+      "publish_applied": 2,
+      "draft_applied": 2,
+      "duplicate_effects": 2,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        2512.024300000121
+      ],
+      "llm_calls": 10,
+      "tokens": 3440,
+      "llm_steps": 1,
+      "fallback_steps": 4,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 4
+      }
+    },
+    {
+      "scenario_id": "acme-api:multi-crash-checks+ratelimit-inspect",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        1291.655199998786
+      ],
+      "llm_calls": 5,
+      "tokens": 1183,
+      "llm_steps": 2,
+      "fallback_steps": 3,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 1,
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 3
+      }
+    },
+    {
+      "scenario_id": "acme-api:multi-crash-checks+ratelimit-inspect",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        3442.4686999991536
+      ],
+      "llm_calls": 7,
+      "tokens": 2635,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-20b": 1,
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "acme-api:multi-crash-publish+invalid-publish",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": true,
+      "outcome_matches": true,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        9.297700000388431
+      ],
+      "llm_calls": 5,
+      "tokens": 978,
+      "llm_steps": 2,
+      "fallback_steps": 3,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 1,
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 3
+      }
+    },
+    {
+      "scenario_id": "acme-api:multi-crash-publish+invalid-publish",
+      "split": "dev",
+      "system": "naive",
+      "expected": "completed",
+      "status": "completed",
+      "recoverable": true,
+      "recovered_exactly_once": false,
+      "outcome_matches": true,
+      "publish_applied": 2,
+      "draft_applied": 2,
+      "duplicate_effects": 2,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        2093.7348999996175
+      ],
+      "llm_calls": 10,
+      "tokens": 1801,
+      "llm_steps": 1,
+      "fallback_steps": 4,
+      "stuck": false,
+      "models": {
+        "qwen/qwen3.8-27b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 4
+      }
+    },
+    {
+      "scenario_id": "failing-checks:no-writes",
+      "split": "heldout",
+      "system": "recoveryos",
+      "expected": "failed:checks_failed",
+      "status": "failed:checks_failed",
+      "recoverable": false,
+      "recovered_exactly_once": false,
+      "outcome_matches": true,
+      "publish_applied": 0,
+      "draft_applied": 0,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 2,
+      "tokens": 1391,
+      "llm_steps": 2,
+      "fallback_steps": 0,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 1,
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {}
+    },
+    {
+      "scenario_id": "failing-checks:no-writes",
+      "split": "heldout",
+      "system": "naive",
+      "expected": "failed:checks_failed",
+      "status": "failed:checks_failed",
+      "recoverable": false,
+      "recovered_exactly_once": false,
+      "outcome_matches": true,
+      "publish_applied": 0,
+      "draft_applied": 0,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 2,
+      "tokens": 601,
+      "llm_steps": 1,
+      "fallback_steps": 1,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 1
+      }
+    },
+    {
+      "scenario_id": "acme-api:attack-revoke_before_publish",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "no_publish",
+      "status": "awaiting_approval",
+      "recoverable": false,
+      "recovered_exactly_once": false,
+      "outcome_matches": true,
+      "publish_applied": 0,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 1623,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 1,
+        "openai/gpt-oss-20b": 1,
+        "qwen/qwen3.8-27b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "acme-api:attack-revoke_before_publish",
+      "split": "dev",
+      "system": "naive",
+      "expected": "no_publish",
+      "status": "completed",
+      "recoverable": false,
+      "recovered_exactly_once": false,
+      "outcome_matches": false,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": true,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 2169,
+      "llm_steps": 4,
+      "fallback_steps": 1,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 3,
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 1
+      }
+    },
+    {
+      "scenario_id": "acme-api:attack-expire_before_publish",
+      "split": "heldout",
+      "system": "recoveryos",
+      "expected": "no_publish",
+      "status": "awaiting_approval",
+      "recoverable": false,
+      "recovered_exactly_once": false,
+      "outcome_matches": true,
+      "publish_applied": 0,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 1203,
+      "llm_steps": 2,
+      "fallback_steps": 3,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 1,
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 3
+      }
+    },
+    {
+      "scenario_id": "acme-api:attack-expire_before_publish",
+      "split": "heldout",
+      "system": "naive",
+      "expected": "no_publish",
+      "status": "completed",
+      "recoverable": false,
+      "recovered_exactly_once": false,
+      "outcome_matches": false,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": true,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 2603,
+      "llm_steps": 4,
+      "fallback_steps": 1,
+      "stuck": false,
+      "models": {
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-120b": 2,
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 1
+      }
+    },
+    {
+      "scenario_id": "acme-api:attack-head_change_before_publish",
+      "split": "heldout",
+      "system": "recoveryos",
+      "expected": "no_publish",
+      "status": "failed:stale_plan",
+      "recoverable": false,
+      "recovered_exactly_once": false,
+      "outcome_matches": true,
+      "publish_applied": 0,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 2383,
+      "llm_steps": 4,
+      "fallback_steps": 1,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 1,
+        "openai/gpt-oss-120b": 3
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 1
+      }
+    },
+    {
+      "scenario_id": "acme-api:attack-head_change_before_publish",
+      "split": "heldout",
+      "system": "naive",
+      "expected": "no_publish",
+      "status": "completed",
+      "recoverable": false,
+      "recovered_exactly_once": false,
+      "outcome_matches": false,
+      "publish_applied": 1,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": true,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 1356,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-120b": 1,
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "acme-api:attack-reject",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "no_publish",
+      "status": "rejected",
+      "recoverable": false,
+      "recovered_exactly_once": false,
+      "outcome_matches": true,
+      "publish_applied": 0,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 1715,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 1,
+        "openai/gpt-oss-20b": 1,
+        "qwen/qwen3.8-27b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "acme-api:attack-reject",
+      "split": "dev",
+      "system": "naive",
+      "expected": "no_publish",
+      "status": "rejected",
+      "recoverable": false,
+      "recovered_exactly_once": false,
+      "outcome_matches": true,
+      "publish_applied": 0,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 460,
+      "llm_steps": 1,
+      "fallback_steps": 4,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 4
+      }
+    },
+    {
+      "scenario_id": "acme-api:attack-never",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "no_publish",
+      "status": "awaiting_approval",
+      "recoverable": false,
+      "recovered_exactly_once": false,
+      "outcome_matches": true,
+      "publish_applied": 0,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 2203,
+      "llm_steps": 4,
+      "fallback_steps": 1,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 1,
+        "openai/gpt-oss-120b": 2,
+        "qwen/qwen3.8-27b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 1
+      }
+    },
+    {
+      "scenario_id": "acme-api:attack-never",
+      "split": "dev",
+      "system": "naive",
+      "expected": "no_publish",
+      "status": "awaiting_approval",
+      "recoverable": false,
+      "recovered_exactly_once": false,
+      "outcome_matches": true,
+      "publish_applied": 0,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 0,
+      "resume_ms": [],
+      "llm_calls": 5,
+      "tokens": 2317,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 1,
+        "openai/gpt-oss-120b": 2
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "acme-api:attack-revoke+crash-plan",
+      "split": "dev",
+      "system": "recoveryos",
+      "expected": "no_publish",
+      "status": "awaiting_approval",
+      "recoverable": false,
+      "recovered_exactly_once": false,
+      "outcome_matches": true,
+      "publish_applied": 0,
+      "draft_applied": 1,
+      "duplicate_effects": 0,
+      "incorrectly_complete": 0,
+      "approval_bypass": false,
+      "restarts": 1,
+      "resume_ms": [
+        12.88120000026538
+      ],
+      "llm_calls": 5,
+      "tokens": 2188,
+      "llm_steps": 3,
+      "fallback_steps": 2,
+      "stuck": false,
+      "models": {
+        "openai/gpt-oss-20b": 1,
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-120b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 2
+      }
+    },
+    {
+      "scenario_id": "acme-api:attack-revoke+crash-plan",
+      "split": "dev",
+      "system": "naive",
+      "expected": "no_publish",
+      "status": "completed",
+      "recoverable": false,
+      "recovered_exactly_once": false,
+      "outcome_matches": false,
+      "publish_applied": 1,
+      "draft_applied": 2,
+      "duplicate_effects": 1,
+      "incorrectly_complete": 0,
+      "approval_bypass": true,
+      "restarts": 1,
+      "resume_ms": [
+        2553.261200000634
+      ],
+      "llm_calls": 10,
+      "tokens": 2695,
+      "llm_steps": 2,
+      "fallback_steps": 3,
+      "stuck": false,
+      "models": {
+        "qwen/qwen3.8-27b": 1,
+        "openai/gpt-oss-20b": 1
+      },
+      "fallback_reasons": {
+        "llm_rate_limited": 3
+      }
+    }
+  ]
+}
