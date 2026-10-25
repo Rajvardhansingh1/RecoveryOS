@@ -1,4 +1,31 @@
-# ---- Project memory and agent instructions: never published ----
+# ===== Secrets and credentials: never pushed =====
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+id_rsa*
+credentials.json
+service-account*.json
+.npmrc
+.pypirc
+.netrc
+
+# ===== Hosting / CLI local state (contains project IDs or tokens) =====
+.neon
+.neon/
+.vercel/
+.render/
+.netlify/
+supabase/.temp/
+supabase/.branches/
+supabase/.env*
+.wrangler/
+
+# ===== Project memory, agent instructions and working docs: never published =====
 DOCS/
 CLAUDE.md
 AGENTS.md
@@ -8,6 +35,7 @@ GEMINI.md
 .codex/
 .opencode/
 .cursor/
+.windsurf/
 .planning/
 memory/
 MEMORY.md
@@ -19,25 +47,15 @@ Testing.md
 Prompt.md
 Prompt_implementationBreif.md
 AgenticSkillsDiscovery.md
+frontend/DESIGN.md
+frontend/ACCESSIBILITY.md
 
-# ---- Secrets ----
-.env
-.env.*
-!.env.example
-
-# ---- Supabase CLI local state (contains local-stack keys) ----
-supabase/.temp/
-supabase/.branches/
-
-# ---- Stray root-level Node files (the apps live in frontend/) ----
-/package-lock.json
-/package.json
-/node_modules/
-
-# ---- Python ----
+# ===== Python =====
 __pycache__/
-*.pyc
+*.py[cod]
 .venv/
+venv/
+env/
 backend/.venv/
 .pytest_cache/
 .ruff_cache/
@@ -46,30 +64,41 @@ backend/.venv/
 .coverage.*
 coverage.xml
 htmlcov/
+*.egg-info/
+build/
+dist/
 
-# ---- Node / Next.js ----
+# ===== Node / Next.js (root package.json is tracked: neon.ts needs @neon/config) =====
 node_modules/
 .next/
 out/
 *.tsbuildinfo
 next-env.d.ts
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
 
-# ---- Logs, local databases, editor ----
+# ===== Test and tool output =====
+frontend/test-results/
+frontend/playwright-report/
+frontend/coverage/
+test-results/
+playwright-report/
+.playwright-mcp/
+
+# ===== Benchmark: raw/local runs are not committed; the published result file is =====
+benchmark/**/results/local-*
+
+# ===== Logs, local databases, editor, OS =====
 *.log
 *.sqlite
 *.sqlite3
 *.db
+*.bak
+*.tmp
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
-
-# ---- Benchmark: raw/local runs are not committed; the published result file is ----
-benchmark/**/results/local-*
-
-# ---- Frontend: design/accessibility working notes are project memory, not published ----
-frontend/DESIGN.md
-frontend/ACCESSIBILITY.md
-frontend/test-results/
-frontend/playwright-report/
-frontend/coverage/
+desktop.ini
